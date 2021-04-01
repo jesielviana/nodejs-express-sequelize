@@ -1,5 +1,5 @@
 class StudentsController {
-  constructor(Student) {
+  constructor (Student) {
     this.Student = Student
   }
 
@@ -16,7 +16,6 @@ class StudentsController {
   async create (studentDTO, courseId) {
     try {
       studentDTO.courseId = courseId
-      console.log(studentDTO)
       await this.Student.create(studentDTO)
     } catch (err) {
       console.log('ERROR:: ', err.message)
