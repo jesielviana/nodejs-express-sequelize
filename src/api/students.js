@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const StudentService = require('../services/studentService')
+const StudentService = require('../services/students')
 const { Student } = require('../models')
 
 const studentService = new StudentService(Student)

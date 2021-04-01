@@ -1,10 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const basename = path.basename(__filename)
-const dbConfig = require('../config/database')
 const Sequelize = require('sequelize')
-
-const sequelize = new Sequelize(dbConfig)
+const sequelize = require('../config/sequelize')
 
 const db = {}
 

@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const CourseService = require('../services/courseService')
+const CourseService = require('../services/courses')
 const { Course } = require('../models')
 
 const courseService = new CourseService(Course)
