@@ -4,13 +4,17 @@ by [@jesielviana](https://twitter.com/jesielviana)
 
 ### Estrutura e Arquitetura 
 
+```shell
 src
-  ├── app.js			app entry point
-  ├── /api			  controller layer: api routes
-  ├── /config			config settings
-  ├── /services		service layer: business logic
-  ├── /models			data access layer: database models	
-  └── /test       test suites
+  ├── app.js         app entry point
+  ├── /api           controller layer: api routes
+  ├── /config        config settings
+  ├── /services      service layer: business logic
+  ├── /models        data access layer: database models	
+test       
+  ├── /unit          unit test suites
+  ├── /integration   test api routes
+ ```
 
 ### Instalação e execução
 
