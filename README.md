@@ -2,7 +2,7 @@
 
 by [@jesielviana](https://twitter.com/jesielviana)
 
-### Estrutura e Arquitetura 
+### Estrutura do projeto 
 
 ```shell
 src
