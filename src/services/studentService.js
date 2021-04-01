@@ -1,5 +1,5 @@
-class StudentsController {
-  constructor (Student) {
+class StudentService {
+  constructor(Student) {
     this.Student = Student
   }
 
@@ -24,4 +24,4 @@ class StudentsController {
   }
 }
 
-module.exports = StudentsController
+module.exports = StudentService

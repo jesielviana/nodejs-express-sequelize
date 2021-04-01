@@ -1,14 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const CoursesController = require('../controllers/courses')
-const db = require('../models')
-const CourseModel = db.course
+const CourseService = require('../services/courseService')
+const { Course } = require('../models')
 
-const coursesController = new CoursesController(CourseModel)
+const courseService = new CourseService(Course)
 
 router.get('/', async (req, res) => {
   try {
-    const courses = await coursesController.get()
+    const courses = await courseService.get()
     res.json(courses)
   } catch (err) {
     res.status(400).send(err.message)
@@ -20,7 +19,7 @@ router.get('/:id', async (req, res) => {
     params: { id }
   } = req
   try {
-    const user = await coursesController.getById(id)
+    const user = await courseService.getById(id)
     res.send(user)
   } catch (err) {
     res.status(400).send(err)
@@ -30,7 +29,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { name, ch } = req.body
-    await coursesController.create({ name, ch })
+    await courseService.create({ name, ch })
     res.json({ name, ch })
   } catch (err) {
     res.status(400).send(err.message)

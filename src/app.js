@@ -1,6 +1,6 @@
-const db = require('./models')
+const { sequelize } = require('./models')
 const express = require('express')
-const routes = require('./routes')
+const routes = require('./api')
 const compression = require('compression')
 
 const app = express()
@@ -11,7 +11,7 @@ app.use(express.json())
 
 app.use('/', routes)
 
-db.sequelize.sync().then(() => {
+sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`Example app listening at http://localhost:${PORT}`)
   })

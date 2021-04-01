@@ -1,4 +1,4 @@
-class CoursesController {
+class CourseService {
   constructor (Course) {
     this.Course = Course
   }
@@ -33,4 +33,4 @@ class CoursesController {
   }
 }
 
-module.exports = CoursesController
+module.exports = CourseService
