@@ -19,8 +19,8 @@ router.get('/:id', async (req, res) => {
     params: { id }
   } = req
   try {
-    const user = await courseService.getById(id)
-    res.send(user)
+    const course = await courseService.getById(id)
+    res.send(course)
   } catch (err) {
     res.status(400).send(err)
   }
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
   try {
     const { name, ch } = req.body
     await courseService.create({ name, ch })
-    res.json({ name, ch })
+    res.status(201).json({ name, ch })
   } catch (err) {
     res.status(400).send(err.message)
   }

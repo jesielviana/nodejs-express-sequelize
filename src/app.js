@@ -1,18 +1,16 @@
-const { sequelize } = require('./models')
 const express = require('express')
+const cors = require('cors')
+const helmet = require('helmet')
 const routes = require('./api')
 const compression = require('compression')
+const config = require('./config')
 
 const app = express()
-const PORT = process.env.PORT || 3000
 
 app.use(compression())
+app.use(cors()) // https://github.com/expressjs/cors
+app.use(helmet()) // https://helmetjs.github.io/
 app.use(express.json())
+app.use(config.API_BASE, routes)
 
-app.use('/', routes)
-
-sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`)
-  })
-})
+module.exports = app

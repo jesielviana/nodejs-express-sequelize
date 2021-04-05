@@ -1,6 +1,8 @@
+const config = require('./index')
+
 module.exports = {
   dialect: 'postgres',
   username: 'postgres',
   password: '',
-  database: 'school'
+  database: config.DATABASE
 }
