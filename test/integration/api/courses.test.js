@@ -27,7 +27,6 @@ describe('Test the courses path', () => {
       ch: 3020
     }
     const response = await request(app).post(API_COURSES).send(newCourse)
-    console.log('response', response.body)
     expect(response.statusCode).toBe(201)
   })
 
