@@ -24,3 +24,14 @@ test
 1. Altere as credencias dentro de /src/config/database.js;
 1. Rode yarn sequelize db:create para criar o banco de dados;
 1. Rode yarn dev para iniciar o servidor.
+
+
+### Referências utilizadas para construção do projeto
+
+* [https://leanpub.com/construindo-apis-testaveis-com-nodejs](https://leanpub.com/construindo-apis-testaveis-com-nodejs/)
+* [http://expressjs.com/pt-br/](http://expressjs.com/pt-br/)
+* [Introduction to Express, a practical tutorial](https://flaviocopes.com/express/)
+* [Bulletproof node.js project architecture](https://dev.to/santypk4/bulletproof-node-js-project-architecture-4epf)
+* [Node.js Architecture and 12 Best Practices for Node.js Development | Scout APM Blog](https://scoutapm.com/blog/nodejs-architecture-and-12-best-practices-for-nodejs-development)
+* [Melhores Práticas em Node.js](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.brazilian-portuguese.md)
+* [https://jestjs.io/pt-BR/](https://jestjs.io/pt-BR/)
