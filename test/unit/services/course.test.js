@@ -13,4 +13,7 @@ test('should fetch all courses', async () => {
   Course.findAll.mockResolvedValue(courses)
   const resp = await courseService.get()
   expect(resp).toEqual(courses)
+  expect(Course.findAll).toHaveBeenCalledWith({
+    attributes: ['id', 'name', 'ch']
+  })
 })
