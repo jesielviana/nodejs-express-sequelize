@@ -10,6 +10,17 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: test
+          POSTGRES_PASSWORD: test
+          POSTGRES_DB: school_test
+          POSTGRES_PORT: 5432
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     strategy:
       matrix:
@@ -25,4 +36,9 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
       env:
-        DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+        DATABASE_HOST: localhost
+        DATABASE_PORT: 5432
+        DATABASE: school_dev
+        DATABASE_USERNAME: test
+        DATABASE_PASSWORD: test
+        # DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
