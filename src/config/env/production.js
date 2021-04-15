@@ -7,7 +7,7 @@ class Config {
     this.DATABASE_HOST = 'salt.db.elephantsql.com'
     this.DATABASE = 'jezqpthi'
     this.DATABASE_USERNAME = 'jezqpthi'
-    this.DATABASE_PASSWORD = 'mscM5BvL3Q8_iJSIkzd9arotFfTTtS88'
+    this.DATABASE_PASSWORD = process.env.DATABASE_PASSWORD
   }
 }
 
