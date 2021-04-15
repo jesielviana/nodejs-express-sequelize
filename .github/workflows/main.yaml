@@ -38,7 +38,7 @@ jobs:
       env:
         DATABASE_HOST: localhost
         DATABASE_PORT: 5432
-        DATABASE: school_dev
+        DATABASE: school_test
         DATABASE_USERNAME: test
         DATABASE_PASSWORD: test
         # DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
