@@ -25,10 +25,21 @@ class CourseService {
 
   async create (courseDTO) {
     try {
+      await this.verifyIfCourseNameIsRegistered(courseDTO.name)
       await this.Course.create(courseDTO)
     } catch (err) {
-      console.log(err)
-      throw new Error(err)
+      throw new Error(err.message)
+    }
+  }
+
+  async verifyIfCourseNameIsRegistered (courseName) {
+    const existingCourse = await this.Course.findAll({
+      where: {
+        name: courseName
+      }
+    })
+    if (existingCourse.length > 0) {
+      throw new Error('Course already registered')
     }
   }
 }

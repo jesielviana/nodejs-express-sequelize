@@ -34,7 +34,6 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(400).send(err.message)
   }
-}
-)
+})
 
 module.exports = router
