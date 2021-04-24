@@ -14,6 +14,18 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/:id', async (req, res) => {
+  const {
+    params: { id }
+  } = req
+  try {
+    const student = await studentService.getById(id)
+    res.send(student)
+  } catch (err) {
+    res.status(400).send(err.message)
+  }
+})
+
 router.post('/', async (req, res) => {
   try {
     const { courseId, name, email } = req.body

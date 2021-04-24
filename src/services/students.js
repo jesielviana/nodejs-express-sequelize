@@ -1,12 +1,23 @@
 class StudentService {
-  constructor(Student) {
-    this.Student = Student
+  constructor (Student) {
+    this.student = Student
   }
 
   async get () {
     try {
-      return await this.Student.findAll({
+      return await this.student.findAll({
         attributes: ['id', 'name', 'email', 'courseId']
+      })
+    } catch (err) {
+      throw new Error(err)
+    }
+  }
+
+  async getById (id) {
+    try {
+      return await this.student.findByPk(id, {
+        attributes: ['id', 'name', 'email'],
+        include: { association: 'course' }
       })
     } catch (err) {
       throw new Error(err)
@@ -16,7 +27,7 @@ class StudentService {
   async create (studentDTO, courseId) {
     try {
       studentDTO.courseId = courseId
-      await this.Student.create(studentDTO)
+      await this.student.create(studentDTO)
     } catch (err) {
       console.log('ERROR:: ', err.message)
       throw new Error(err.message)
