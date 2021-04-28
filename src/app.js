@@ -13,7 +13,7 @@ app.use(compression())
 app.use(cookieParser())
 app.use(cors({
   origin: config.CLIENT_URL,
-  credentials: true, // token in cookie
+  // credentials: true, // token in cookie
   methods: 'GET,PUT,POST,OPTIONS, DELETE',
   allowedHeaders: 'Accept, Content-Type, Authorization'
 })) // https://github.com/expressjs/cors

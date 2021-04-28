@@ -10,9 +10,9 @@ router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body
     const { token, userData } = await authService.login(email, password)
-    res.cookie('token', token, { maxAge: 3600000, httpOnly: true, secure: config.COOKIE_SECURE }) // // token in cookie
-    res.json({ auth: true, user: userData }) // // token in cookie
-    // res.json({ auth: true, user: userData, token: token })
+    // res.cookie('token', token, { maxAge: 3600000, httpOnly: true, secure: config.COOKIE_SECURE }) // // token in cookie
+    // res.json({ auth: true, user: userData }) // // token in cookie
+    res.json({ auth: true, user: userData, token: token })
   } catch (err) {
     res.status(401).send({ auth: false, token: null, message: err.message })
   }
