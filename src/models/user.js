@@ -1,5 +1,5 @@
-const student = (sequelize, DataTypes) => {
-  const Student = sequelize.define('Student', {
+const user = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -23,18 +23,11 @@ const student = (sequelize, DataTypes) => {
       }
     }
   }, {
-    tableName: 'students'
+    tableName: 'users'
   }
   )
 
-  Student.associate = (models) => {
-    Student.belongsTo(models.Course, {
-      foreignKey: 'courseId',
-      as: 'course'
-    })
-  }
-
-  return Student
+  return User
 }
 
-module.exports = student
+module.exports = user

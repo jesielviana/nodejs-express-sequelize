@@ -6,6 +6,7 @@ const { Course } = require('../models')
 const courseService = new CourseService(Course)
 
 router.get('/', async (req, res) => {
+  console.log('User: ', req.userId)
   try {
     const courses = await courseService.get()
     res.json(courses)
@@ -15,6 +16,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
+  console.log('User: ', req.userId)
   const {
     params: { id }
   } = req
@@ -27,6 +29,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+  console.log('User: ', req.userId)
   try {
     const { name, ch } = req.body
     await courseService.create({ name, ch })

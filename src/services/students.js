@@ -1,3 +1,6 @@
+const bcrypt = require('bcryptjs')
+
+const SALT = 8
 class StudentService {
   constructor (Student) {
     this.student = Student
@@ -27,6 +30,7 @@ class StudentService {
   async create (studentDTO, courseId) {
     try {
       studentDTO.courseId = courseId
+      studentDTO.password = bcrypt.hashSync(studentDTO.password, SALT)
       await this.student.create(studentDTO)
     } catch (err) {
       console.log('ERROR:: ', err.message)

@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const StudentService = require('../services/students')
-const { Student } = require('../models')
+const UserService = require('../services/users')
+const { User } = require('../models')
 
-const studentService = new StudentService(Student)
+const userService = new UserService(User)
 
 router.get('/', async (req, res) => {
   try {
-    const students = await studentService.get()
-    res.json(students)
+    const users = await userService.get()
+    res.json(users)
   } catch (err) {
     res.status(400).send(err.message)
   }
@@ -19,8 +19,8 @@ router.get('/:id', async (req, res) => {
     params: { id }
   } = req
   try {
-    const student = await studentService.getById(id)
-    res.send(student)
+    const user = await userService.getById(id)
+    res.send(user)
   } catch (err) {
     res.status(400).send(err.message)
   }
@@ -28,8 +28,8 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { courseId, name, email, password } = req.body
-    await studentService.create({ name, email, password }, courseId)
+    const { name, email, password } = req.body
+    await userService.create({ name, email, password })
     res.json({ name, email })
   } catch (err) {
     res.status(400).send(err.message)
