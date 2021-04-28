@@ -12,7 +12,7 @@ class Config {
     this.JWT_SECRET = 'HZADgA9ttB$S!dy!hu3Rauvg!L27'
     this.COOKIE_SECURE = true
     this.PUBLIC_ROUTES = ['/api/', '/api/students', '/api/login']
-    this.CLIENT_URL = 'http://localhost:8080'
+    this.CLIENT_URL = 'https://frontend-ifpi-course.netlify.app/'
   }
 }
 

@@ -12,7 +12,7 @@ const app = express()
 app.use(compression())
 app.use(cookieParser())
 app.use(cors({
-  origin: 'http://127.0.0.1:5500',
+  origin: config.CLIENT_URL,
   credentials: true, // token in cookie
   methods: 'GET,PUT,POST,OPTIONS, DELETE',
   allowedHeaders: 'Accept, Content-Type, Authorization'
