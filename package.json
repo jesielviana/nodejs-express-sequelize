@@ -5,6 +5,7 @@
   "scripts": {
     "test": "NODE_ENV=test jest --verbose",
     "test:coverage": "NODE_ENV=test jest --coverage",
+    "start": "node server.js",
     "dev": "node server.js"
   },
   "license": "MIT",
