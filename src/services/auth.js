@@ -13,7 +13,6 @@ class Auth {
   }
 
   async login (email, password) {
-    console.log('tt', email, password)
     const user = await this.user.findOne({
       where: {
         email: email

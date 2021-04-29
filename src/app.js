@@ -29,6 +29,7 @@ app.all(`${config.API_BASE}*`, (req, res, next) => {
   }
   auth(req, res, next)
 })
+
 app.get('/', (req, res) => {
   res.status(200).send('<h1 style="text-align: center">App Online!</h1>')
 })
