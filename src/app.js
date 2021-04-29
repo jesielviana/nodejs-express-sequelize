@@ -3,14 +3,12 @@ const cors = require('cors')
 const helmet = require('helmet')
 const routes = require('./api')
 const compression = require('compression')
-const cookieParser = require('cookie-parser')
 const config = require('./config')
 const auth = require('./middleware/auth')
 
 const app = express()
 
 app.use(compression())
-app.use(cookieParser())
 app.use(cors({
   origin: config.CLIENT_URL,
   // credentials: true, // token in cookie

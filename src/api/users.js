@@ -26,14 +26,4 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-router.post('/', async (req, res) => {
-  try {
-    const { name, email, password } = req.body
-    await userService.create({ name, email, password })
-    res.json({ name, email })
-  } catch (err) {
-    res.status(400).send(err.message)
-  }
-})
-
 module.exports = router

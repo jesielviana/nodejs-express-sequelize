@@ -3,17 +3,23 @@ const request = require('supertest')
 const config = require('../../../src/config')
 const app = require('../../../src/app')
 const { sequelize } = require('../../../src/models')
+const { signin } = require('../../helpers')
+
 
 const API_COURSES = `${config.API_BASE}/courses`
 
+
+
 const DEFAULT_COURSE = {
-  name: 'Course one',
+  name: 'Course 1',
   ch: 1500
 }
-
+let USER_TOKEN = ''
 beforeAll(async () => {
-  await sequelize.sync({ force: true })
-  await request(app).post(API_COURSES).send(DEFAULT_COURSE)
+  USER_TOKEN = await signin()
+  await request(app).post(API_COURSES)
+    .set('Authorization', USER_TOKEN)
+    .send(DEFAULT_COURSE)
 })
 
 afterAll(async () => {
@@ -23,15 +29,19 @@ afterAll(async () => {
 describe('Test the courses path', () => {
   test('It should add new course', async () => {
     const newCourse = {
-      name: 'Course 1',
+      name: 'Course 2',
       ch: 3020
     }
-    const response = await request(app).post(API_COURSES).send(newCourse)
+    const response = await request(app)
+      .post(API_COURSES).send(newCourse)
+      .set('Authorization', USER_TOKEN)
     expect(response.statusCode).toBe(201)
   })
 
   test('It should get all courses', async () => {
-    const response = await request(app).get(API_COURSES)
+    const response = await request(app)
+      .get(API_COURSES)
+      .set('Authorization', USER_TOKEN)
     const courses = response.body
     expect(response.statusCode).toBe(200)
     expect(courses.length).toBe(2)

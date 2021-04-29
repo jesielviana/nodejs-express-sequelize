@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const config = require('../config')
 
+const SALT = 8
+
 class Auth {
   constructor (user) {
     this.user = user
@@ -12,7 +14,7 @@ class Auth {
     return token
   }
 
-  async login (email, password) {
+  async signin (email, password) {
     const user = await this.user.findOne({
       where: {
         email: email
@@ -30,6 +32,15 @@ class Auth {
     const token = this.genToken(user)
     const { name } = user
     return { token, userData: { name, email } }
+  }
+
+  async signup (userDTO) {
+    try {
+      userDTO.password = bcrypt.hashSync(userDTO.password, SALT)
+      await this.user.create(userDTO)
+    } catch (err) {
+      throw new Error(err.message)
+    }
   }
 }
 

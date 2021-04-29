@@ -1,6 +1,3 @@
-const bcrypt = require('bcryptjs')
-
-const SALT = 8
 class UserService {
   constructor (User) {
     this.user = User
@@ -23,16 +20,6 @@ class UserService {
       })
     } catch (err) {
       throw new Error(err)
-    }
-  }
-
-  async create (userDTO) {
-    try {
-      userDTO.password = bcrypt.hashSync(userDTO.password, SALT)
-      await this.user.create(userDTO)
-    } catch (err) {
-      console.log('ERROR:: ', err.message)
-      throw new Error(err.message)
     }
   }
 }
