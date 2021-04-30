@@ -3,8 +3,8 @@ const request = require('supertest')
 const config = require('../../src/config')
 const app = require('../../src/app')
 const { sequelize } = require('../../src/models')
-const SALT = 8
 
+const SALT = 8
 const API_SIGNUP = `${config.API_BASE}/auth/signup`
 const API_SIGNIN = `${config.API_BASE}/auth/signin`
 
@@ -31,10 +31,7 @@ async function signin () {
 
 const helper = {
   USER_TEST,
-  signin,
+  signin
 }
 
 module.exports = helper
-
-
-

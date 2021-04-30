@@ -5,10 +5,7 @@ const app = require('../../../src/app')
 const { sequelize } = require('../../../src/models')
 const { signin } = require('../../helpers')
 
-
 const API_COURSES = `${config.API_BASE}/courses`
-
-
 
 const DEFAULT_COURSE = {
   name: 'Course 1',
