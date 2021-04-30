@@ -25,6 +25,13 @@ test
 1. Rode yarn sequelize db:create para criar o banco de dados;
 1. Rode yarn dev para iniciar o servidor.
 
+### API 
+
+- Cadastro de usuário: `http://localhost:3000/api/auth/signup`
+- Login: `http://localhost:3000/api/auth/signin`
+- Cursos (consulta e cadastro): `http://localhost:3000/api/courses`
+- Usuários (consulta): `http://localhost:3000/api/users`
+- Estudantes (consulta e cadastro): `http://localhost:3000/api/students`
 
 ### Referências utilizadas para construção do projeto
 
