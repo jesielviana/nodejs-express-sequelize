@@ -33,6 +33,7 @@ test
 - Usuários (consulta): `http://localhost:3000/api/users`
 - Estudantes (consulta e cadastro): `http://localhost:3000/api/students`
 
+
 ### Referências utilizadas para construção do projeto
 
 * [https://leanpub.com/construindo-apis-testaveis-com-nodejs](https://leanpub.com/construindo-apis-testaveis-com-nodejs/)
@@ -42,3 +43,6 @@ test
 * [Node.js Architecture and 12 Best Practices for Node.js Development | Scout APM Blog](https://scoutapm.com/blog/nodejs-architecture-and-12-best-practices-for-nodejs-development)
 * [Melhores Práticas em Node.js](https://github.com/goldbergyoni/nodebestpractices/blob/master/README.brazilian-portuguese.md)
 * [https://jestjs.io/pt-BR/](https://jestjs.io/pt-BR/)
+
+---
+**Link do repositório de um exemplo de front-end que integra com esta API:** [https://github.com/jesielviana/frontend-ifpi-curso-nodejs](https://github.com/jesielviana/frontend-ifpi-curso-nodejs)
