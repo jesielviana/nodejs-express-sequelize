@@ -1,4 +1,4 @@
-# Projeto Node.j com Express, Sequelize, Jest e Postgres
+# Projeto Node.js com Express, Sequelize, Jest e Postgres
 
 by [@jesielviana](https://twitter.com/jesielviana)
 
