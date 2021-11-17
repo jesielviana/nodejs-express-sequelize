@@ -31,7 +31,7 @@ app.all(`${config.API_BASE}*`, (req, res, next) => {
 })
 
 app.get('/', (req, res) => {
-  res.status(200).send('<h1 style="text-align: center">App Online!</h1>')
+  res.status(200).send('<h1 style="text-align: center">App Online, 2021!</h1>')
 })
 app.use(config.API_BASE, routes)
 

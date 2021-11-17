@@ -40,7 +40,7 @@ describe('Test the courses path', () => {
       .get(API_COURSES)
       .set('Authorization', USER_TOKEN)
     const courses = response.body
-    expect(response.statusCode).toBe(300)
+    expect(response.statusCode).toBe(200)
     expect(courses.length).toBe(2)
   })
 })
