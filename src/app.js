@@ -9,12 +9,14 @@ const auth = require('./middleware/auth')
 const app = express()
 
 app.use(compression())
-app.use(cors({
-  origin: config.CLIENT_URL,
-  // credentials: true, // token in cookie
-  methods: 'GET,PUT,POST,OPTIONS, DELETE',
-  allowedHeaders: 'Accept, Content-Type, Authorization'
-})) // https://github.com/expressjs/cors
+app.use(
+  cors({
+    origin: config.CLIENT_URL,
+    // credentials: true, // token in cookie
+    methods: 'GET,PUT,POST,OPTIONS, DELETE',
+    allowedHeaders: 'Accept, Content-Type, Authorization'
+  })
+) // https://github.com/expressjs/cors
 app.use(helmet()) // https://helmetjs.github.io/
 app.use(express.json())
 
