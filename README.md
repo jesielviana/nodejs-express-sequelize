@@ -7,7 +7,7 @@ by [@jesielviana](https://twitter.com/jesielviana)
 ```shell
 src
   ├── app.js         app entry point
-  ├── /api           controller layer: api routes
+  ├── /routes        controller layer: api routes
   ├── /config        config settings
   ├── /services      service layer: business logic
   ├── /models        data access layer: database models	
