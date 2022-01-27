@@ -1,4 +1,5 @@
 const express = require('express')
+const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const helmet = require('helmet')
 const routes = require('./routes')
@@ -7,14 +8,14 @@ const config = require('./config')
 const auth = require('./middleware/auth')
 
 const app = express()
-
+app.use(cookieParser())
 app.use(compression())
 app.use(
   cors({
     origin: config.CLIENT_URL,
-    // credentials: true, // token in cookie
+    credentials: true, // token in cookie
     methods: 'GET,PUT,POST,OPTIONS, DELETE',
-    allowedHeaders: 'Accept, Content-Type, Authorization'
+    // allowedHeaders: 'Accept, Content-Type, Authorization'
   })
 ) // https://github.com/expressjs/cors
 app.use(helmet()) // https://helmetjs.github.io/
