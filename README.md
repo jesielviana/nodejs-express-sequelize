@@ -1,8 +1,8 @@
-# Projeto Node.js com Express, Sequelize, Jest e Postgres
+# Node.js project with Express, Sequelize, Jest and Postgres
 
 by [@jesielviana](https://twitter.com/jesielviana)
 
-### Estrutura do projeto 
+### Directory structure
 
 ```shell
 src
@@ -16,25 +16,25 @@ test
   ├── /integration   test api routes
  ```
 
-### Instalação e execução
+### Installation and execution
 
-1. Faça um clone desse repositório;
-1. Entre na pasta cd nodejs-express-sequelize;
-1. Rode yarn para instalar as dependências;
-1. Altere as credencias dentro de /src/config/database.js;
-1. Rode yarn sequelize db:create para criar o banco de dados;
-1. Rode yarn dev para iniciar o servidor.
+1. Clone of this repository: `git clone https://github.com/jesielviana/nodejs-express-sequelize.git`;
+1. Enter the nodejs-express-sequelize folder: `cd nodejs-express-sequelize`;
+1. Run yarn to install dependencies: `yarn`;
+1. Config database credentials inside `/src/config/database.js`;
+1. Create database, run `yarn sequelize db:create to create the database`;
+1. Run `yarn dev` to start the server.
 
 ### API 
 
-- Cadastro de usuário: `http://localhost:3000/api/auth/signup`
+- Sign-up: `http://localhost:3000/api/auth/signup`
 - Login: `http://localhost:3000/api/auth/signin`
-- Cursos (consulta e cadastro): `http://localhost:3000/api/courses`
-- Usuários (consulta): `http://localhost:3000/api/users`
-- Estudantes (consulta e cadastro): `http://localhost:3000/api/students`
+- Courses: `http://localhost:3000/api/courses`
+- Users: `http://localhost:3000/api/users`
+- Students: `http://localhost:3000/api/students`
 
 
-### Referências utilizadas para construção do projeto
+### References
 
 * [https://leanpub.com/construindo-apis-testaveis-com-nodejs](https://leanpub.com/construindo-apis-testaveis-com-nodejs/)
 * [http://expressjs.com/pt-br/](http://expressjs.com/pt-br/)
@@ -45,4 +45,4 @@ test
 * [https://jestjs.io/pt-BR/](https://jestjs.io/pt-BR/)
 
 ---
-**Link do repositório de um exemplo de front-end que integra com esta API:** [https://github.com/jesielviana/frontend-ifpi-curso-nodejs](https://github.com/jesielviana/frontend-ifpi-curso-nodejs)
+**Repository link of a frontend example that integrates with this API:** [https://github.com/jesielviana/frontend-ifpi-curso-nodejs](https://github.com/jesielviana/frontend-ifpi-curso-nodejs)
