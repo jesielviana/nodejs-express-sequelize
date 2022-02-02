@@ -11,7 +11,7 @@ class Config {
     this.JWT_SECRET = 'HZADgA9ttB$S!dy!hu3Rauvg!L27'
     this.COOKIE_SECURE = false
     this.PUBLIC_ROUTES = ['/', '/api/auth/signup', '/api/auth/signin']
-    this.CLIENT_URL = '*'
+    this.CLIENT_URL = 'http://localhost:5500'
   }
 }
 
