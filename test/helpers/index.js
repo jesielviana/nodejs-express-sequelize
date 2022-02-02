@@ -26,7 +26,7 @@ async function signup () {
 async function signin () {
   await signup()
   const response = await request(app).post(API_SIGNIN).send(USER_TEST)
-  return response.body.token
+  return response.headers['set-cookie'][0]
 }
 
 const helper = {

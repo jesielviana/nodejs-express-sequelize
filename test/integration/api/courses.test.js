@@ -15,7 +15,7 @@ let USER_TOKEN = ''
 beforeAll(async () => {
   USER_TOKEN = await signin()
   await request(app).post(API_COURSES)
-    .set('Authorization', USER_TOKEN)
+    .set('Cookie', USER_TOKEN)
     .send(DEFAULT_COURSE)
 })
 
@@ -31,14 +31,14 @@ describe('Test the courses path', () => {
     }
     const response = await request(app)
       .post(API_COURSES).send(newCourse)
-      .set('Authorization', USER_TOKEN)
+      .set('Cookie', USER_TOKEN)
     expect(response.statusCode).toBe(201)
   })
 
   test('It should get all courses', async () => {
     const response = await request(app)
       .get(API_COURSES)
-      .set('Authorization', USER_TOKEN)
+      .set('Cookie', USER_TOKEN)
     const courses = response.body
     expect(response.statusCode).toBe(200)
     expect(courses.length).toBe(2)
