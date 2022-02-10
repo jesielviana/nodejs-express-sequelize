@@ -33,7 +33,6 @@ class StudentService {
       studentDTO.password = bcrypt.hashSync(studentDTO.password, SALT)
       await this.student.create(studentDTO)
     } catch (err) {
-      console.log('ERROR:: ', err.message)
       throw new Error(err.message)
     }
   }
